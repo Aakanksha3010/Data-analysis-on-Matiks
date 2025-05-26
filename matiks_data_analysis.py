@@ -30,9 +30,7 @@ df.describe()
 
 df.isnull()
 
-#
 
-!pip install streamlit
 
 import streamlit as st
 import seaborn as sns
@@ -160,46 +158,6 @@ st.header("📉 Active Users with Low Total_Revenue_USD")
 low_Total_Revenue_USD_active = df[(df['Total_Revenue_USD'] < df['Total_Revenue_USD'].median()) & (df['Total_Play_Sessions'] > df['Total_Play_Sessions'].median())]
 st.dataframe(low_Total_Revenue_USD_active[['User_ID', 'Total_Revenue_USD', 'Total_Play_Sessions']])
 
-!git config --global user.email "aakankshagyan3010@gmail.com"
 
-# Replace the URL below with your public repo URL
-!git clone https://github.com/Aakanksha3010/Data-analysis-on-Matiks.git
 
-!cp "/content/drive/MyDrive/Colab Notebooks/Matiks data analysis.ipynb" "/content/Data-analysis-on-Matiks/"
-
-# Commented out IPython magic to ensure Python compatibility.
-# %cd /content/Data-analysis-on-Matiks
-
-!git add "Matiks data analysis.ipynb"
-!git commit -m "Add Matiks data analysis notebook from Colab"
-!git push
-
-from getpass import getpass
-token = getpass('Enter your GitHub PAT: ')
-
-!git clone https://{token}@github.com/Aakanksha3010/Data-analysis-on-Matiks.git
-
-# Commented out IPython magic to ensure Python compatibility.
-# %cd /content/Data-analysis-on-Matiks
-!git remote remove origin
-
-from getpass import getpass
-token = getpass('Enter your GitHub token: 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')
-
-# Set the remote with your token
-!git remote add origin https://{token}@github.com/Aakanksha3010/Data-analysis-on-Matiks.git
-
-from getpass import getpass
-token = getpass('Enter your GitHub token:')
-
-# Create a properly formatted command string
-remote_url = f"https://{token}@github.com/Aakanksha3010/Data-analysis-on-Matiks.git"
-
-# Remove existing origin (if any), just in case
-!git remote remove origin
-!git remote add origin {remote_url}
-
-!git push origin main
-
-!jupyter nbconvert --to script "Matiks data analysis.ipynb"
 
